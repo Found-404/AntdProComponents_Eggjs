@@ -1,0 +1,49 @@
+{
+  "name": "rpa-admin-server",
+  "version": "1.0.0",
+  "description": "rpa admin server",
+  "private": true,
+  "egg": {
+    "declarations": true,
+    "framework": "../lib/framework"
+  },
+  "dependencies": {
+    "egg": "^3",
+    "egg-mysql": "^3.4.0",
+    "egg-scripts": "^2",
+    "egg-view-nunjucks": "^2.3.0",
+    "findup-sync": "^5.0.0",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "egg-bin": "^5",
+    "egg-ci": "^2",
+    "egg-mock": "^5",
+    "eslint": "^8",
+    "eslint-config-egg": "^12"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-rpa-admin-server",
+    "stop": "egg-scripts stop --title=egg-server-rpa-admin-server",
+    "dev": "egg-bin dev --port 8001",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov"
+  },
+  "ci": {
+    "version": "16, 18",
+    "type": "github"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "chenshengfu",
+  "license": "MIT"
+}

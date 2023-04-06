@@ -1,0 +1,40 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "init": "npm run bootstrap && npm run build && npm run pack",
+    "bootstrap": "lerna clean -y && lerna bootstrap",
+    "build": "lerna run build",
+    "pack": "node ./scripts/pack",
+    "admin": "lerna run dev --scope=rpa-admin-server",
+    "server": "lerna run dev --scope=rpa-server",
+    "shipment": "lerna run dev-prod --scope=amazon-sc-confirm-shipment",
+    "ad": "lerna run dev-prod --scope=amazon-sc-ad",
+    "traffic": "lerna run dev-prod --scope=amazon-sc-traffic",
+    "items": "lerna run dev-prod --scope=walmart-sc-items-commission",
+    "research": "lerna run dev-prod --scope=ebay-research-products",
+    "datasource": "create-rpa-datasource",
+    "prepare": "husky install",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s"
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.6",
+    "conventional-changelog-cli": "^2.2.2",
+    "crx": "^5.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "fs-extra": "^11.1.0",
+    "husky": "^8.0.0",
+    "lerna": "^6.1.0",
+    "node-rsa": "^1.1.1",
+    "semver": "^7.3.8",
+    "webpack": "^5.75.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.github/
+data/
+logs/
+*.zip
+.DS_Store
+run/
+.vscode/
+packages/*/app/public/**
+lerna-debug.log
+package-lock.json
+packages/*/package-lock.json
+packages/**/*/config.local.js
