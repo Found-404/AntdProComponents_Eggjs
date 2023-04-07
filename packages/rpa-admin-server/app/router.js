@@ -20,4 +20,6 @@ module.exports = app => {
 
   router.get('/api/shops/search', controller.shops.search);
   router.delete('/api/shops', controller.shops.delete);
+
+  router.post('/api/dingwarning', controller.dingWarning.warning);
 };

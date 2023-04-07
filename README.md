@@ -32,16 +32,16 @@ npx run admin
 npm run changelog
 ```
 
-### 工程目录
+# 工程目录
 - 前端工程目录：`packages/rpa-admin`
 - 后端工程目录：`packages/rpa-admin-server`
 
-### 后端开发环境准备
+# 后端开发环境准备
 + 本地安装`mysql``5.7.12`版本
 + 在`packages/rpa-admin-server/config/`目录下新建`config.local.js`文件
 + 将本地`mysql`账号密码配置到`packages/rpa-admin-server/config/config.local.js`文件中
 
-#### Eg:
+## Eg:
 ```js
 exports.mysql = {
     client: {

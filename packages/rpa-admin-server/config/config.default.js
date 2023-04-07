@@ -50,9 +50,15 @@ module.exports = appInfo => {
     priKey: 'MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEA2U4/SkvtV1zBG/auWb4QCeyeRuUGwSQH7zpQpjQ8vzcbBh2YRgWboo1fPoO42/ZM83WrWW+8acXHZf2nv+DoTQIDAQABAkEA2Iy2W3awjTe8pP49nubdmtY2oFWJVp1uXsLRLd+ujakpIdW8mZPHm6CTlpYH+/MFNeL6VAkaeDGA9D3xsixUwQIhAPQmO52lVbyC0+3GklQLELxqpdINqC66XbkzUCyctYl9AiEA49p1TNNCVc+PLMXd3u8zbmunzpNCgTQKsUOGhadgkxECICdX9elsmEldh8tcYX47nkHOqdQUsVJ+Y9YRZ80Yn8R9AiEA0StkEYHC3MmtExoV4ylN2qlDpFT1cWzYAAEQRjPwaTECIEfiBdHDErbTUcBCh3ffS8k1Pqt64PnJtaS46xzf3OPv',
   };
 
+  // 钉钉机器人 token && 密钥
+  const dingToken = '393b9605d4c10e365890f4e974ba7f4d02d41b03576e1f2770864c490400c095'; // token
+  const dingSecret = 'SEC3a224ca7acb129ba0f8093df8966ab39361133441f08e38f67047a3ef6718f53'; // 密钥
+
   return {
     ...config,
     ...userConfig,
+    dingSecret,
+    dingToken,
     pubkeyPrikey,
   };
 };
