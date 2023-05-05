@@ -92,17 +92,29 @@ const TableList: React.FC<unknown> = () => {
 
   const columns: ProColumns<Accounts>[] = [
     {
+      title: '账号名',
+      dataIndex: 'account_name',
+      width: 200,
+      ellipsis: true,
+      formItemProps: {
+        rules: [
+          {
+            required: true,
+            message: '账号名为必填项',
+          },
+        ],
+      },
+    },
+    {
       title: 'ID',
       dataIndex: 'id',
       width: 200,
       ellipsis: true,
       hideInForm: true,
-      fixed: 'left',
     },
     {
       title: '账号',
       dataIndex: 'account',
-      fixed: 'left',
       width: 200,
       ellipsis: true,
       formItemProps: {
@@ -129,6 +141,13 @@ const TableList: React.FC<unknown> = () => {
           },
         ],
       },
+    },
+    {
+      title: '备注',
+      dataIndex: 'remarks',
+      width: 200,
+      ellipsis: true,
+      hideInSearch: true,
     },
     {
       title: '操作',

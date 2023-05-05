@@ -2,11 +2,16 @@ import { request } from '@umijs/max';
 
 export interface Accounts {
   id: number;
+  account_name: string;
   account: string;
   password: string;
+  remarks: string;
 }
 
-export type TAddParams = Pick<Accounts, 'account' | 'password'>;
+export type TAddParams = Pick<
+  Accounts,
+  'account' | 'password' | 'account_name' | 'remarks'
+>;
 
 export type TEditParams = TAddParams;
 
@@ -76,6 +81,3 @@ export async function deleteAccount(params: Pick<Accounts, 'id'>) {
     },
   });
 }
-
-
-

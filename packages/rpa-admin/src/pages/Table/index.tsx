@@ -140,7 +140,7 @@ const TableList: React.FC<unknown> = () => {
           data.list?.map((account: Accounts) => {
             return {
               value: account.id,
-              label: account.account,
+              label: account.account_name,
             };
           }),
         );

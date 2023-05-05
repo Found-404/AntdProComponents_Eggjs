@@ -74,6 +74,41 @@ class AppBootHook {
         password VARCHAR(255) NOT NULL
       )  ENGINE=INNODB DEFAULT CHARSET utf8;
     `);
+
+    const kjvs_accounts_columns_2023_04_07 = await app.database.query(`
+      SHOW COLUMNS FROM kjvs_accounts LIKE 'account_name';
+    `);
+
+    const kjvs_accounts_columns_account_2023_04_07 = await app.database.query(`
+      SHOW COLUMNS FROM kjvs_accounts LIKE 'remarks';
+    `);
+
+    // 增加账号名
+    if (!kjvs_accounts_columns_2023_04_07?.length) {
+      await app.database.query(`
+          ALTER TABLE kjvs_accounts
+            ADD account_name VARCHAR(255) NOT NULL;
+        `);
+    }
+
+    // 增加备注
+    if (!kjvs_accounts_columns_account_2023_04_07?.length) {
+      await app.database.query(`
+          ALTER TABLE kjvs_accounts
+            ADD remarks VARCHAR(255);
+        `);
+    }
+
+    const tasks_columns_2023_03_29 = await app.database.query(`
+      SHOW COLUMNS FROM tasks LIKE 'deleted';
+    `);
+
+    if (!tasks_columns_2023_03_29?.length) {
+      await app.database.query(`
+        ALTER TABLE tasks
+          ADD deleted INT NOT NULL DEFAULT 0 COMMENT '逻辑删除 0存在 1已删除';
+      `);
+    }
   }
 }
 
